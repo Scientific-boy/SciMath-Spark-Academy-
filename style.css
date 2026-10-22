@@ -1,0 +1,588 @@
+/* ========================================
+   1. GENERAL SETTINGS
+======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 25px 20px;
+    background-color: #000000;
+    overflow-x: hidden;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+
+/* ========================================
+   2. ACADEMY HEADING
+======================================== */
+
+.academy-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 25px auto 35px;
+    position: relative;
+    z-index: 2;
+}
+
+.academy-heading h1 {
+    margin: 0;
+    font-family: "Orbitron", sans-serif;
+    font-size: clamp(20px, 4vw, 42px);
+    font-weight: 900;
+
+    background: linear-gradient(
+        90deg,
+        #00bfff,
+        #ffffff,
+        #0080ff
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 8px #0080ff);
+}
+
+
+/* ========================================
+   3. LIGHT BULBS
+======================================== */
+
+.bulb-container {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.bulb {
+    position: relative;
+    z-index: 1;
+    font-size: clamp(22px, 4vw, 38px);
+    animation: bulbPulse 2s ease-in-out infinite;
+}
+
+.bulb-halo {
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    border-radius: 50%;
+    background: rgba(255, 190, 0, 0.25);
+    filter: blur(12px);
+    animation: haloPulse 2s ease-in-out infinite;
+}
+
+
+/* ========================================
+   4. BULB ANIMATIONS
+======================================== */
+
+@keyframes bulbPulse {
+    0%, 100% {
+        filter: brightness(1);
+    }
+
+    50% {
+        filter: brightness(1.4);
+    }
+}
+
+@keyframes haloPulse {
+    0%, 100% {
+        opacity: 0.45;
+        transform: scale(0.9);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+/* ========================================
+   5. WELCOME SECTION
+======================================== */
+
+.welcome-section {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+    margin: 0 auto 45px;
+    padding: 10px;
+}
+
+.glow-text {
+    color: #66ccff;
+    font-size: clamp(15px, 2.5vw, 20px);
+    line-height: 1.8;
+
+    text-shadow:
+        0 0 5px #0080ff,
+        0 0 12px rgba(0, 128, 255, 0.65);
+
+    margin: 15px 0;
+}
+
+
+/* ========================================
+   6. SCIENTIFIC BACKGROUND SYMBOLS
+======================================== */
+
+.science-symbol {
+    position: fixed;
+    color: rgba(0, 150, 255, 0.15);
+    font-family: "Orbitron", sans-serif;
+    font-weight: 700;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+    animation: float 8s ease-in-out infinite;
+}
+
+
+/* ========================================
+   7. MATHEMATICAL SYMBOL POSITIONS
+======================================== */
+
+.symbol-one {
+    top: 15%;
+    left: 7%;
+    font-size: 65px;
+}
+
+.symbol-two {
+    top: 30%;
+    right: 8%;
+    font-size: 70px;
+    animation-delay: 1s;
+}
+
+.symbol-three {
+    bottom: 25%;
+    left: 10%;
+    font-size: 60px;
+    animation-delay: 2s;
+}
+
+.symbol-four {
+    bottom: 15%;
+    right: 9%;
+    font-size: 75px;
+    animation-delay: 3s;
+}
+/* ========================================
+   8. SCIENTIFIC FORMULA POSITIONS
+======================================== */
+
+.formula-one {
+    top: 45%;
+    left: 3%;
+    font-size: 18px;
+    animation-delay: 1.5s;
+}
+
+.formula-two {
+    top: 20%;
+    right: 3%;
+    font-size: 18px;
+    animation-delay: 2.5s;
+}
+
+.formula-three {
+    bottom: 35%;
+    right: 4%;
+    font-size: 22px;
+    animation-delay: 0.5s;
+}
+
+.formula-four {
+    bottom: 10%;
+    left: 35%;
+    font-size: 18px;
+    animation-delay: 3.5s;
+}
+
+
+/* ========================================
+   9. FLOATING ANIMATION
+======================================== */
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-18px);
+    }
+}
+
+/* ========================================
+   10. HOMEPAGE CARDS
+======================================== */
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 25px;
+    max-width: 1100px;
+    margin: 35px auto 55px;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* ========================================
+   11. GENERAL CARD STYLE
+======================================== */
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    flex: 1 1 250px;
+    max-width: 320px;
+    min-height: 180px;
+
+    padding: 25px 20px;
+    border: 1px solid;
+    border-radius: 16px;
+
+    background: rgba(10, 15, 30, 0.85);
+    text-decoration: none;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background-color 0.25s ease;
+
+    cursor: pointer;
+}
+
+.card h2 {
+    margin: 0 0 15px;
+    font-family: "Orbitron", sans-serif;
+    font-size: 23px;
+}
+
+.card p {
+    margin: 0;
+    color: #dddddd;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* ========================================
+   12. LEARN CARD
+======================================== */
+
+.learn-card {
+    border-color: #00ccff;
+
+    box-shadow:
+        0 0 10px rgba(0, 204, 255, 0.2);
+}
+
+.learn-card h2 {
+    color: #00ccff;
+    text-shadow: 0 0 8px #00ccff;
+}
+
+
+/* ========================================
+   13. ABOUT US CARD
+======================================== */
+
+.about-card {
+    border-color: #bb66ff;
+
+    box-shadow:
+        0 0 10px rgba(187, 102, 255, 0.2);
+}
+
+.about-card h2 {
+    color: #cc88ff;
+    text-shadow: 0 0 8px #bb66ff;
+}
+
+
+/* ========================================
+   14. CONTACT US CARD
+======================================== */
+
+.contact-card {
+    border-color: #00ff99;
+
+    box-shadow:
+        0 0 10px rgba(0, 255, 153, 0.2);
+}
+
+.contact-card h2 {
+    color: #00ff99;
+    text-shadow: 0 0 8px #00ff99;
+}
+
+/* ========================================
+   15. CARD HOVER EFFECTS
+======================================== */
+
+@media (hover: hover) {
+
+    .learn-card:hover {
+        background-color: rgba(0, 204, 255, 0.08);
+
+        box-shadow:
+            0 0 15px #00ccff,
+            0 0 30px rgba(0, 204, 255, 0.2);
+
+        transform: translateY(-6px);
+    }
+
+    .about-card:hover {
+        background-color: rgba(187, 102, 255, 0.08);
+
+        box-shadow:
+            0 0 15px #bb66ff,
+            0 0 30px rgba(187, 102, 255, 0.2);
+
+        transform: translateY(-6px);
+    }
+
+    .contact-card:hover {
+        background-color: rgba(0, 255, 153, 0.08);
+
+        box-shadow:
+            0 0 15px #00ff99,
+            0 0 30px rgba(0, 255, 153, 0.2);
+
+        transform: translateY(-6px);
+    }
+}
+
+
+/* ========================================
+   16. CARD ACTIVE EFFECT
+======================================== */
+
+.card:active {
+    transform: scale(0.98);
+}
+
+
+/* ========================================
+   17. KEYBOARD ACCESSIBILITY
+======================================== */
+
+.card:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 5px;
+}
+
+/* ========================================
+   18. FOOTER
+======================================== */
+
+.site-footer {
+    position: relative;
+    z-index: 2;
+
+    max-width: 900px;
+    margin: 65px auto 0;
+    padding: 25px 15px 10px;
+
+    border-top: 1px solid rgba(0, 128, 255, 0.3);
+}
+
+.footer-title {
+    margin: 0 0 10px;
+    color: #66ccff;
+
+    font-family: "Orbitron", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+
+    text-shadow: 0 0 8px #0080ff;
+}
+
+.footer-tagline {
+    margin: 10px 0;
+    color: #bbbbbb;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.copyright {
+    margin: 20px 0 0;
+    color: #777777;
+
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* ========================================
+   19. TABLET RESPONSIVENESS
+======================================== */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 20px 15px;
+    }
+
+    .academy-heading {
+        gap: 8px;
+    }
+
+    .cards-container {
+        gap: 18px;
+    }
+
+    .card {
+        flex-basis: 220px;
+    }
+
+    .symbol-one,
+    .symbol-two,
+    .symbol-three,
+    .symbol-four {
+        font-size: 45px;
+    }
+}
+
+
+/* ========================================
+   20. MOBILE RESPONSIVENESS
+======================================== */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 15px 12px;
+    }
+
+    .academy-heading {
+        gap: 6px;
+        margin-top: 20px;
+        margin-bottom: 25px;
+    }
+
+    .academy-heading h1 {
+        font-size: clamp(16px, 5vw, 23px);
+    }
+
+    .bulb {
+        font-size: 21px;
+    }
+
+    .welcome-section {
+        margin-bottom: 30px;
+        padding: 5px;
+    }
+
+    .glow-text {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+        margin-top: 25px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 340px;
+        min-height: 150px;
+        padding: 22px 16px;
+    }
+
+    .card h2 {
+        font-size: 21px;
+    }
+
+    .card p {
+        font-size: 14px;
+    }
+
+    .site-footer {
+        margin-top: 45px;
+    }
+
+    .footer-title {
+        font-size: 16px;
+    }
+
+    .footer-tagline {
+        font-size: 13px;
+    }
+
+    .copyright {
+        font-size: 11px;
+    }
+
+    .formula-one,
+    .formula-two,
+    .formula-three,
+    .formula-four {
+        font-size: 13px;
+    }
+}
+/* ========================================
+   21. VERY NARROW SCREENS
+======================================== */
+
+@media (max-width: 320px) {
+
+    .academy-heading h1 {
+        font-size: 15px;
+    }
+
+    .bulb {
+        font-size: 17px;
+    }
+
+    .glow-text {
+        font-size: 13px;
+    }
+
+    .card h2 {
+        font-size: 19px;
+    }
+}
+
+
+/* ========================================
+   22. REDUCED MOTION ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
